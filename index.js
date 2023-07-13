@@ -1,15 +1,7 @@
 let maxNum = prompt('Enter maximum number.');
 let target = Math.floor(Math.random() * maxNum);
-
-// Helper functions
-
-// function isImputValid() {
-//     if (!(maxNum > 1)) {
-//         console.log('Imput must be a number and must be higher than 0.');
-//     } else if (maxNum > 1) {
-//         return maxNum;
-//     }
-// }
+let guess = promt('Enter guess');
+let totGuesses = 0; 
 
 while (maxNum < 1) {
     maxNum = prompt('Imput must be a number and must be higher than 0.');
@@ -18,8 +10,23 @@ while (maxNum < 1) {
     }
 }
 
-while ()
 
+while (parseInt(guess) !== target) {
+    if (guess === 'q') {
+        console.log('You have quit. Lets start a new game.')
+        break;
+    } 
+    totGuesses ++;
+    if (guess > target) {
+        guess = prompt('Guess lower');
+    } else if (guess < target) {
+        guess = prompt('Guess higher');
+    }
+}
+
+if (guess == target) {
+    console.log('You win!');
+}
 
 
 
