@@ -1,15 +1,15 @@
 let maxNum = prompt('Enter maximum number.');
-let target = Math.floor(Math.random() * maxNum);
-let guess = promt('Enter guess');
-let totGuesses = 0; 
+let target = Math.floor(Math.random() * maxNum + 1);
+let totGuesses = 1; 
 
-while (maxNum < 1) {
+while (maxNum <= 0 || isNaN(maxNum)) {
     maxNum = prompt('Imput must be a number and must be higher than 0.');
     if (maxNum > 1) {
         break;
     }
 }
 
+let guess = prompt('Enter guess');
 
 while (parseInt(guess) !== target) {
     if (guess === 'q') {
@@ -26,13 +26,8 @@ while (parseInt(guess) !== target) {
 
 if (guess == target) {
     console.log('You win!');
+    console.log(`It took you ${totGuesses} guesses.`)
 }
-
-
-
-console.log(`maxNum = ${maxNum}`);
-console.log(`target = ${target}`);
-
 
 
 /*
